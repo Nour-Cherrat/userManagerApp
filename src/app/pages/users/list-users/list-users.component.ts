@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { lastValueFrom } from 'rxjs';
+import {catchError, lastValueFrom, of, tap} from 'rxjs';
+import {HttpClient} from "@angular/common/http";
 import { UsersService } from 'src/app/services/users.service';
 import { UserType } from 'src/app/types/users.type';
 
@@ -15,7 +16,8 @@ export class ListUsersComponent implements OnInit, OnDestroy {
   public users: UserType[] = [];
   public totalPages = 1;
 
-  constructor(public usersService: UsersService) {}
+  constructor(public usersService: UsersService,
+              private http: HttpClient) {}
 
   getUsers(page: number = 1): void {
     if (page >= 1 && page <= this.totalPages && this.activePage !== page) {
@@ -35,8 +37,22 @@ export class ListUsersComponent implements OnInit, OnDestroy {
     }
   }
 
-  deleteUser(userId: number) {
-    // TODO: Delete user action
+  deleteUser(index: number) {
+    this.users.splice(index, 1);
+    /*
+    const deleteUrl = `https://reqres.in/api/users/${userId}`;
+    this.http.delete(deleteUrl)
+      .pipe(
+        tap(() => {
+          console.log('User deleted successfully.');
+        }),
+        catchError((error) => {
+          console.error('Error deleting user:', error);
+          return of(null);
+        })
+      )
+      .subscribe();
+      */
   }
 
   ngOnInit(): void {
@@ -44,6 +60,6 @@ export class ListUsersComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    
+
   }
 }

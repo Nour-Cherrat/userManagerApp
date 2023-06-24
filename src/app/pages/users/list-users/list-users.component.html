@@ -21,7 +21,7 @@
             <tr class="align-middle text-center" *ngIf="loading">
                 <td colspan="6"><img class="gif-loading" src="assets/loading.gif"/></td>
             </tr>
-            <tr class="align-middle" *ngFor="let user of users">
+            <tr class="align-middle" *ngFor="let user of users; index as i">
                 <th scope="row">{{ user.id }}</th>
                 <td><img class="users-list-avatar" [src]="user.avatar" alt="No Img" /></td>
                 <td>{{ user.first_name }}</td>
@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         <li role="menuitem">
-                            <a class="dropdown-item red-menuitem" href="javascript:;" (click)="deleteUser(user.id)">
+                            <a class="dropdown-item red-menuitem" href="javascript:;" (click)="deleteUser(i)">
                                 <i class="bi bi-trash"></i> {{ 'pages.users.buttons.delete'|translate }}
                             </a>
                         </li>
