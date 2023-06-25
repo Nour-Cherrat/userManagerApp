@@ -8,12 +8,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 @NgModule({
   declarations: [
     AddUserComponent,
-    ListUsersComponent
+    ListUsersComponent,
+    UpdateUserComponent
   ],
   imports: [
     CommonModule,
