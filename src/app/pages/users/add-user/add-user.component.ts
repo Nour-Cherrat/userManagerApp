@@ -36,7 +36,8 @@ export class AddUserComponent {
     console.log("value: ", value);
 
     const userData = this.formData.value;
-
+    this.usersService.addUser(userData)
+   /*
     this.http.post('https://reqres.in/api/users', userData).pipe(
       tap(response => {
         console.log('Enregistrement réussi :', response);
@@ -52,7 +53,7 @@ export class AddUserComponent {
         console.log('Erreur lors de l enregistrement :', error);
         throw error;
       })
-    ).subscribe();
+    ).subscribe();*/
   }
 
 }

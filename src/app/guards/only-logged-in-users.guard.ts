@@ -4,7 +4,7 @@ import {UsersService} from "../services/users.service";
 
 export const onlyLoggedInUsersGuard: CanActivateFn = (route, state) => {
   console.log("OnlyLoggedInUsers guard");
-  if(inject(UsersService).isLoggedIn()) {
+  if(inject(UsersService).hasAcces()) {
     return true;
   } else {
     window.alert("vous n'avez pas le permission pour acceder à cette page");

@@ -35,8 +35,8 @@ export class LoginComponent {
     console.log("value:", value);
 
     const loginData = this.formData.value;
-
-    this.http.post('https://reqres.in/api/login', loginData).pipe(
+    this.usersService.loggin(loginData);
+   /* this.http.post('https://reqres.in/api/login', loginData).pipe(
       tap(response => {
         console.log('Login réussi :', response);
 
@@ -46,7 +46,8 @@ export class LoginComponent {
         console.log('Erreur lors du login', error);
         throw error;
       })
-    ).subscribe();
+    ).subscribe();*/
+
 
 
   }
