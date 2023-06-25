@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="content">
+  <h4>Login</h4>
+
+  <div class="card">
+    <div class="card-header">
+      <br>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="formData" (ngSubmit)="loginSubmit(formData.value)">
+
+        <label>Email :</label>
+        <input class="form-control" name="email" type="email" formControlName="email">
+
+        <label>Password :</label>
+        <input class="form-control" name="password" type="password" formControlName="password">
+
+        <input class="form-control save" type="submit" value="Login" [disabled]="">
+
+      </form>
+    </div>
+
+    <div class="card-footer">
+      <br>
+    </div>
+
+  </div>
+</div>

@@ -5,6 +5,9 @@
         "change_language": "Changer la langue"
     },
     "menu": {
+      "login": {
+        "title": "Page login"
+      },
         "home": "Accueil",
         "users": "Gestion des utilisateurs"
     },

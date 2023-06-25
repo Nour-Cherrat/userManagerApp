@@ -9,6 +9,9 @@
         "users": "Manage users"
     },
     "pages": {
+      "login": {
+        "title": "Login Page"
+      },
         "home": {
             "title": "Welcome to this test application"
         },

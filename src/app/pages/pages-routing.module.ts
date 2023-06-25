@@ -8,7 +8,7 @@ import {onlyLoggedInUsersGuard} from "../guards/only-logged-in-users.guard";
 const routes: Routes = [{
   path: "admin",
   component: PagesLayoutComponent,
-  canActivate: [onlyLoggedInUsersGuard],
+  //canActivate: [onlyLoggedInUsersGuard],
   children: [
     {
       path: "home",
