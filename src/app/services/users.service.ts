@@ -14,6 +14,14 @@ export class UsersService {
 
   constructor(protected http: HttpClient) { }
 
+  isLoggedIn(): boolean {
+    return false;
+  }
+
+  hasUnsavedChanges(): boolean {
+    return true;
+  }
+
   getUsers(page: number): Observable<HttpUsersListResponse> {
     return (this.http.get(`${environment.apiLink}/users?delay=1&page=${page}&per_page=${this.perPage}`)) as Observable<HttpUsersListResponse>;
   }
